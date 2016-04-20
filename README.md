@@ -1,6 +1,8 @@
 # Swap Array
 Swap position of two items in array without changing the state of the passed array.
 
+[![devDependency Status](https://david-dm.org/michaelzoidl/swap-array/dev-status.svg)](https://david-dm.org/michaelzoidl/babel-root-import#info=devDependencies)
+
 # Install
 ```
 $ npm install swap-array --save
@@ -24,7 +26,7 @@ SwapArray(SomeArray, 0, 2);
 // ['thats','cool','dude'];
 ```
 
-## By the way
+## Does it change the passed array?
 Nope, before it changes the positioning we clone the passed array and return just the new instance. Ideal for e.g. some redux-reducer where it's not allowed to change an existing state.
 
 ## Benchmark
