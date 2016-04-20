@@ -2,7 +2,7 @@
   "name": "swap-array",
   "version": "1.0.0",
   "description": "Swap Array Entries by Index",
-  "main": "index.js",
+  "main": "dist/swap-array.js",
   "scripts": {
     "build": "babel index.js --out-file dist/swap-array.js",
     "test": "mocha test.js --compilers js:babel-register",
@@ -12,6 +12,9 @@
     "type": "git",
     "url": "git+https://github.com/michaelzoidl/swap-array.git"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "swap",
     "array",
