@@ -1,0 +1,38 @@
+{
+  "name": "swap-array",
+  "version": "1.0.0",
+  "description": "Swap Array Entries by Index",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel index.js --out-file dist/swap-array.js",
+    "test": "mocha test.js --compilers js:babel-register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelzoidl/swap-array.git"
+  },
+  "keywords": [
+    "swap",
+    "array",
+    "javascript",
+    "reorder",
+    "order",
+    "index"
+  ],
+  "author": "Michael J. Zoidl <npm@michaelzoidl.com> (https://entwicklerstube.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michaelzoidl/swap-array/issues"
+  },
+  "homepage": "https://github.com/michaelzoidl/swap-array#readme",
+  "devDependencies": {
+    "babel-cli": "^6.7.5",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-register": "^6.7.2",
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "lodash.clone": "^4.3.2"
+  }
+}
