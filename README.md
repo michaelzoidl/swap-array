@@ -1,6 +1,8 @@
 # Swap Array
 Swap position of two items in array without changing the state of the passed array.
 
+[![Build Status](https://travis-ci.org/michaelzoidl/swap-array.svg?branch=master)](https://travis-ci.org/michaelzoidl/swap-array)
+
 [![devDependency Status](https://david-dm.org/michaelzoidl/swap-array/dev-status.svg)](https://david-dm.org/michaelzoidl/babel-root-import#info=devDependencies)
 
 ## Install
