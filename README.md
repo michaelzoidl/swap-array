@@ -3,13 +3,13 @@ Swap position of two items in array without changing the state of the passed arr
 
 [![devDependency Status](https://david-dm.org/michaelzoidl/swap-array/dev-status.svg)](https://david-dm.org/michaelzoidl/babel-root-import#info=devDependencies)
 
-# Install
+## Install
 ```
 $ npm install swap-array --save
 ```
 
-# Usage
-```
+## Usage
+```js
 // Import with ES6
 import SwapArray from 'swap-array';
 
@@ -34,7 +34,7 @@ Nope, before it changes the positioning we clone the passed array and return jus
 1,149,543 op/s
 ```
 
-# Contribute
+## Contribute
 ```
 // Run and Watch tests
 $ npm run test -- -w
