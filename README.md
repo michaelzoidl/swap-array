@@ -27,7 +27,7 @@ SwapArray(SomeArray, 0, 2);
 ```
 
 ## Does it change the passed array?
-Nope, before it changes the positioning we clone the passed array and return just the new instance. Ideal for e.g. some redux-reducer where it's not allowed to change an existing state.
+Nope, before it changes the positioning we clone the passed array and return just the new instance. Ideal for e.g. some redux-reducer where it's not allowed to change an existing state. If you want that the origin-array changes his state checkout the [array-swap](https://github.com/Marko-Jankovic/array-swap) repo from Marko Jankovic.
 
 ## Benchmark
 ```
