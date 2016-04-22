@@ -11,24 +11,23 @@ $ npm install swap-array --save
 
 ## Usage
 ```js
-// Import with ES6
 import SwapArray from 'swap-array';
-
-// Import with ES5
-var SwapArray = require('swap-array').default;
 
 var SomeArray = ['thats','cool','dude'];
 
 SwapArray(SomeArray, 0, 2);
-// returns:
 // ['dude','thats','cool'];
-
-// and 'SomeArray' is still:
-// ['thats','cool','dude'];
 ```
 
 ## Does it change the passed array?
 Nope, before it changes the positioning we clone the passed array and return just the new instance. Ideal for e.g. some redux-reducer where it's not allowed to change an existing state. If you want that the origin-array changes his state checkout the [array-swap](https://github.com/Marko-Jankovic/array-swap) repo from Marko Jankovic.
+
+## FAQ
+### How to import/require with old ES5 standard
+Just import it usually but attend the default prop
+```javascript
+var SwapArray = require('swapt-array').default;
+```
 
 ## Benchmark
 ```
@@ -36,7 +35,7 @@ Nope, before it changes the positioning we clone the passed array and return jus
 ```
 
 ## Contribute
-```
+```shell
 // Run and Watch tests
 $ npm run test -- -w
 
