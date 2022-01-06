@@ -1,17 +1,39 @@
-export default (Arr, Caller, Target) => {
-  let Instance = Arr.constructor();
-  let Stash = Arr;
+/* app imports */
+const inputValidator = require("./service/validate-inputs.js");
+const indexNumberValidator = require("./service/validate-index-numbers.js");
 
-  let InstanceType = Array.isArray(Instance) ? 'array' : typeof Instance;
+module.exports = (array, firstIndex, secondIndex) => {
+  /* lets validate inputs first */
+  let validationResult = inputValidator({array, firstIndex, secondIndex});
 
-  // Check types and throw err if no arr is passed
-  if(InstanceType !== 'array') throw '[ERR] SwapArray expects a array as first param';
+  if (validationResult.hasError === true) {
+    throw new Error(validationResult.errorString);
+  }
+  else {
+    /* keep the original array intact, so take a clone here */
+    let resultArray = array.splice(0);
 
-  // Copy the Arr-Content into new Instance - so we don't overwrite the passed array
-  Stash.map((s, i) => Instance[i] = s);
+    /* set the values of both the index numbers (consider possibilities of negative values */
+    let indexOne = (firstIndex >= 0) ? firstIndex : array.length - firstIndex;
+    let indexTwo = (secondIndex >= 0) ? secondIndex : array.length - secondIndex;
 
-  // Update indexes
-  Instance[Caller] = Instance.splice(Target, 1, Instance[Caller])[0];
+    /* validate the index numbers at this point */
+    let validateIndexOne = indexNumberValidator(indexOne, resultArray.length); 
+    let validateIndexTwo = indexNumberValidator(indexTwo, resultArray.length);
 
-  return Instance;
+    if (validateIndexOne.hasError === true) {
+      throw new Error(validateIndexOne.errorString);
+    }
+    else if (validateIndexTwo.hasError === true) {
+      throw new Error(validateIndexTwo.errorString);
+    }
+    else {
+      let temp = resultArray[indexOne];
+      resultArray[indexOne] = resultArray[indexTwo];
+      resultArray[indexTwo] = temp;
+
+      /* return to caller after the swap process */
+      return resultArray;
+    }
+  }
 }
